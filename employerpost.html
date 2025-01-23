@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Form - Job Postings</title>
+    <link rel="stylesheet" href="entirestyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Prociono&family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="entirescript.js"></script>        
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+    </style>
+</head>
+<body>
+
+<header style="display: flex; align-items: center; justify-content: space-between; height: 70px; position: relative;">
+<a href="index.html">
+    <img src="imgs/pctvs_header.png" style="height:50px;margin-left:5vw">
+</a>    <span style="position: absolute; left: 50%; transform: translateX(-50%);">Job Postings Form</span>
+    <img src="imgs/bulldog-removebg.png" style="height:70px;margin-right:13vw">
+</header>
+    
+    
+<div class="employpagecontainer">
+
+    <!-- Success Popup -->
+    <div id="success-popup" class="success-popup">
+        Successfully Submitted!
+    </div>
+
+    <h2 style = "margin-bottom: 20px;
+">Submit a New Job Posting</h2>
+
+<!-- Form to send out a job posting to be approved and displayed on the main page -->
+    
+    <form id="job-posting-form">
+        <div class="form-group">
+            <label for="company-name">Company Name</label>
+            <input type="text" id="company-name" name="company-name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="job-title">Job Title</label>
+            <input type="text" id="job-title" name="job-title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="job-location">Job Location</label>
+            <input type="text" id="job-location" name="job-location" required>
+        </div>
+
+        <div class="form-group">
+            <label for="job-description">Job Description</label>
+            <textarea id="job-description" name="job-description" maxlength="500" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="contact-name">Contact Person</label>
+            <input type="text" id="contact-name" name="contact-name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="contact-email">Contact Email</label>
+            <input type="email" id="contact-email" name="contact-email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="salary">Salary (optional)</label>
+            <input type="text" id="salary" name="salary">
+        </div>
+
+        <div class="form-group">
+            <label for="employment-type">Employment Type</label>
+            <select id="employment-type" name="employment-type">
+                <option value="Full-Time">Full-Time</option>
+                <option value="Part-Time">Part-Time</option>
+                <option value="Contract">Contract</option>
+                <option value="Internship">Internship</option>
+            </select>
+        </div>
+
+<div class="form-group" style="display: flex; justify-content: space-between;">
+    <button type="submit" style=" margin-top: 10px;">Submit Job Posting</button>
+    </form>
+
+    <!-- Navigates to the main postings page -->
+    <button class="view-postings-btn" onclick="location.href = 'index.html'" >View Job Postings</button>
+</div>
+
+    
+</div>
+
+
+<!-- Password Popup Modal -->
+<div id="password-popup">
+    <div id="popup-content">
+        <h3>Please Enter the Password</h3>
+        <input type="password" id="password-input" placeholder="Enter Password">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="attempt-message"></p>
+    </div>
+</div>
+
+    
+<script>
+
+    // Event handler which waits for form submission to create a new job posting to be approved 
+    document.getElementById('job-posting-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const companyName = document.getElementById('company-name').value;
+        const jobTitle = document.getElementById('job-title').value;
+        const jobLocation = document.getElementById('job-location').value;
+        const jobDescription = document.getElementById('job-description').value;
+        const contactName = document.getElementById('contact-name').value;
+        const contactEmail = document.getElementById('contact-email').value;
+        const salary = document.getElementById('salary').value;
+
+        const employmentType = document.getElementById('employment-type').value;
+
+        const newPosting = {
+            id: Date.now(),
+            companyName,
+            jobTitle,
+            jobLocation,
+            jobDescription,
+            contactName,
+            contactEmail,
+            salary,
+            employmentType,
+            status: 'pending', // Default job posting status
+        };
+
+        const postings = JSON.parse(localStorage.getItem('jobPostings')) || [];
+        postings.push(newPosting);
+        localStorage.setItem('jobPostings', JSON.stringify(postings));
+        this.reset(); // Reset form fields
+        
+        // Show the success popup after submission
+        showSuccessPopup();
+    });
+
+    const correctPassword = "3MPLOY3RSONLY";
+    let attempts = 0;
+
+        // Ensure that the password popup appears when the page loads
+    window.onload = function() {
+        document.getElementById("password-popup").style.display = "flex";
+    };
+            
+</script>
+
+</body>
+</html>
