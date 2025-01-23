@@ -27,7 +27,7 @@ function renderPostingsPage() {
             <div>${posting.jobLocation}</div>
             <div class="salary-apply-container">
                 <div class="salarystyle">${posting.salary}</div>
-                <button onclick="openApplicationForm(${posting.id}, '${posting.jobTitle}')" class="apply-btn">Apply</button>
+                <button onclick="location.href = 'index.html'" class="apply-btn">Apply</button>
             </div>
         `;
         postingsList.appendChild(post);
