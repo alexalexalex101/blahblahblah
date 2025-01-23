@@ -16,6 +16,9 @@
             border-bottom: 3px solid #006f99;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+        #phonebye {
+                display:none;
+        }
 
         .employpagecontainer {
             width: 80%;
