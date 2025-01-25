@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Website design inspired by https://pctvs.org/-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employer Form - Job Postings</title>
-    <link rel="stylesheet" href="entirestyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale: 1.0">
+    <title>Job Postings</title>
+    <link rel="stylesheet" href="entirestyle.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Prociono&family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="entirescript.js"></script>        
+    <script type="text/javascript" src="entirescript.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
+
     </style>
 </head>
 <body>
@@ -17,56 +19,99 @@
 <header style="display: flex; align-items: center; justify-content: space-between; height: 70px; position: relative;">
 <a href="index.html">
     <img src="imgs/pctvs_header.png" style="height:50px;margin-left:5vw">
-</a>    <span style="position: absolute; left: 50%; transform: translateX(-50%);">Student Application Form</span>
+</a>    <span style="position: absolute; left: 50%; transform: translateX(-50%);">Available Job Postings</span>
     <img src="imgs/bulldog-removebg.png" style="height:70px;margin-right:13vw">
 </header>
-    
-    
-<div class="employpagecontainer">
 
 
 
-        <h2 id = "form-title">Application Form</h2> 
+<!-- Main container which holds the job posting cards -->
+<div class="postpagecontainer">
+
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <!-- Left Image -->
+        <a href="employerpost.html">
+        <img src="imgs/briefcase.png" alt="Briefcase" style="height:100px;margin-right: 150px;">
+        </a>
+            
+        <!-- Text -->
+        <div>
+                <center>
+                        <h2>Job Postings</h2>
+    <b> PCTVS STUDENTS ONLY</b>
+
+    </center>
+        </div>
+
+        <!-- Right Image -->
+        <a href="employerpost.html">
+        <img src="imgs/maninsuit.webp" alt="Man in Suit" style="height:100px;margin-left: 150px;">
+        </a>
+        
+    </div>
+    <br>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly;" id="postings-list"></div>
+</div>
+
+
+<!-- Modal for the application form -->
+<div id="application-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeApplModal()">&times;</span>
+        <h2>Application Form</h2>
         <form id="application-form">
             <input type="text" id="applicant-name" class="form-input" placeholder="Your Name" required />
             <input type="text" id="student-id" class="form-input" placeholder="Student ID" required />
             <input type="email" id="applicant-email" class="form-input" placeholder="Your Email" required />
             <input type="tel" id="applicant-phone" class="form-input" placeholder="Phone Number" required />
-            <input type="file" id="applicant-resume" class="form-input"/>            
+            <input type="file" id="applicant-file" class="form-input" />
             <input type="hidden" id="job-id" />
             <button type="submit" class="submit-btn">Submit Application</button>
         </form>
-
-    <!-- Navigates to the main postings page -->
-    <Center>
-    <button class="view-postings-btn" onclick="location.href = 'index.html'" style="margin-top:20px">View Job Postings</button>
-</Center>
-</div>
-
-    
-</div>
-    <!-- Success Popup -->
-    <div id="success-popup" class="success-popup">
-        Successfully Submitted!
     </div>
+</div>
+
+<!-- Modal for Job Details -->
+<div id="job-details-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeJobDetailsModal()">&times;</span>
+        <div class="modal-title" id="modal-job-title"></div>
+        <div id="modal-job-details" class="modal-details"></div>
+    </div>
+</div>
+    
+<!-- Success Popup -->
+<div id="success-popup" class="success-popup">
+    Successfully Submitted!
+</div>
 
 <script>
 
-    // Event handler which waits for form submission to create a new job posting to be approved 
-    document.getElementById('application-form"').addEventListener('submit', function(e) {
-        e.preventDefault();
-        };
-        
-        // Show the success popup after submission
-            document.getElementById('success-popup').style.display = 'block';
 
-        setTimeout(function() {
-            document.getElementById('success-popup').style.display = 'none';
-        }, 3000); // Hide the popup after 3 seconds
-    });
+// Event handler for form submission
+document.getElementById('application-form').addEventListener('submit', function (event) {
+    event.preventDefault();
 
-    
+    // Processes the application data
+    const jobId = document.getElementById('job-id').value;
+    const name = document.getElementById('applicant-name').value;
+    const studentId = document.getElementById('student-id').value;
+    const email = document.getElementById('applicant-email').value;
+    const phone = document.getElementById('applicant-phone').value;
+    const file = document.getElementById('applicant-file').files[0];
+
+    // Closes the modal after submission
+    closeModal();
+
+    // Shows the success popup after submission
+    showSuccessPopup();
+});
+
+// Renders approved job posting cards
+renderPostingsPage();
 </script>
 
+
+    
 </body>
 </html>
