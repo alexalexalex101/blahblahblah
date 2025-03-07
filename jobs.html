@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="rogersjs.js" defer></script>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderPostingsPage();
+        });
+    </script>
+    <script src="jsjobs.js" defer></script>
+
+
+
+</head>
+<body>
+    <header>
+        <a href="index.html" id="logo"><img src="images/guaranteed-logo.png" alt="guaranteed-logo"></a>
+        <nav>
+            <ul>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="jobs.html">JOBS</a></li>
+                <li><a href="employers.html">EMPLOYERS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h3 class="title"> Job Openings </h3>
+        <div class = "filter-container">
+            <label>
+                CTE
+            </label>
+            <select>
+                <option>
+                    hi
+                </option>
+            </select>
+
+        </div>
+        <div class="jobs-container">
+
+
+        </div>
+    </div>
+    <div class="jobs-preview" id="whole-preview">
+        <div id="jobdetails" class="preview">
+            <i class="fas fa-times"></i>
+            <img src="images/data-analyst.jpg" alt="">
+            <h3><div id="preview-job-title"></div></h3>
+            <div class="company-name">
+                Company Name
+            </div>
+            <p>We are seeking a highly motivated Data Analyst to join our team and help drive data-driven decision-making across the organization. The ideal candidate is passionate about analyzing complex datasets, uncovering insights, and transforming raw information into actionable strategies.</p>
+            <div class="salary">$17.53/HR</div>
+            <div class="buttons">
+                <a class="apply-button">Apply</a>
+            </div>
+        </div>
+    </div>    
+
+
+    <footer>
+        <div class="items">
+            <div class="socials">
+                <a href = "https://www.instagram.com/pctvs1/"><img src="images/instaIcon.png" alt="Instagram Icon"></a>
+                <a href="https://www.youtube.com/@passaiccountytechnical-voc6240"><img src="images/youtubeIcon.png" alt="Youtube Icon"></a>
+                <a href="https://www.linkedin.com/school/pctvs/"><img src="images/linkedinIcon.png" alt="LinkedIn Icon"></a>
+            </div>
+            <div class="navigate">
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="privacypolicy.html">Privacy Policy & Terms of Service</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="copyright">
+                <p>@ 2025 GUARANTEED.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Urbanist:700|Urbanist:400');
+
+body {
+  font-family: 'Urbanist';
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Urbanist';
+  font-weight: 700;
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 4.210rem; /* 67.36px */}
+
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+small {font-size: 0.750rem; /* 12px */}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #e2ecfc;
+    transition: all .2s linear;
+    text-decoration: none;
+    outline: none; border: none;
+    text-transform: capitalize;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+nav li a {
+    font-size: 15px;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    border-bottom: #9cb1db;
+    border: 1px;
+    margin-bottom:10px;
+    background-color: #3f79d6;
+}
+
+body {
+    background-color: #030d1b;
+    
+}
+
+#logo {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#logo img {
+    width: auto;
+    height: 125px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+nav ul li a {
+    transition: 0.5s;
+    font-size: 20px;
+}
+
+footer {
+    background-color: #25467a;
+    bottom: 0;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin:0 auto;
+    padding:3rem 2rem;
+}
+
+.container .title {
+    color: #ffffff;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container .jobs-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+    row-gap: 2rem
+}
+
+.container .jobs-container .jobs {
+    text-align:center;
+    padding: 3rem 2rem;
+    background: #25467a;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0, 0.1);
+    outline: .1rem solid #3f79d6;
+    outline-offset: -1.5rem;
+    cursor: pointer;
+    width: 30rem;
+}
+
+.container .jobs-container .jobs:hover {
+    outline: .2rem solid #ffffff;
+    outline-offset: 0;
+}
+
+.container .jobs-container .jobs img {
+    height: 25rem;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.container .jobs-container .jobs:hover img {
+    transform: scale(0.9)
+}
+
+.container .jobs-container .jobs h3 {
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    color: #ffffff
+}
+
+.container .jobs-container .jobs .salary {
+    font-size: 2.5rem;
+}
+
+.filter-container {
+    width:100%;
+    color:black;
+    background-color:red;
+    margin-bottom:4rem;
+    text-align:center;
+}
+
+.filter-container select {
+    background-color: white;
+    color: black; 
+    border: 1px solid #ccc;
+    padding: 8px; 
+    border-radius: 4px;
+    font-size: 1rem; 
+}
+
+.jobs-preview {
+    position:fixed;
+    top:0;
+    left:0;
+    min-height:100vh;
+    width:100%;
+    background: rgba(0,0,0, 0.8);
+    display:none;
+    align-items: center;
+    justify-content:center;
+}
+
+.jobs-preview .preview {
+    display: none;
+    padding: 2rem;
+    text-align:center;
+    background:#25467a;
+    position: relative;
+    margin:2rem;
+    width:40rem;
+}
+
+.jobs-preview .preview.active {
+    display:inline-block;
+}
+
+.jobs-preview .preview img {
+    height: 20rem;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.jobs-preview .preview .fa-times {
+    position:absolute;
+    top:1rem; right:1.5rem;
+    cursor:pointer;
+    color:#3f79d6;
+    font-size: 4rem;
+}
+
+.jobs-preview .preview .fa-times:hover {
+    transform: rotate(90deg);
+}
+
+.jobs-preview .preview h3 {
+    padding:.5rem 0;
+    font-size:2.5rem;
+}
+
+.jobs-preview .preview p {
+    line-height: 1.5;
+    padding:1rem 0;
+    font-size:1rem;
+}
+
+.jobs-preview .preview .salary {
+    font-size: 2rem;
+    padding:0.5rem 0;
+}
+
+.jobs-preview .preview .buttons {
+    background-color: #2f27ce;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 15px;
+    height: auto;
+    padding: 16px 30px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.5s;
+    font-family: 'Urbanist';
+    z-index: 1000;
+}
+
+.jobs-preview .preview .buttons:hover {
+    cursor:pointer;
+}
+
+.items {
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+    height: 20px;
+}
+
+.socials a img{
+    margin-right: 10px;
+    width: auto;
+    height: 20px;
+}
+
+.navigate {
+    display: flex;
+    color: #050315;
+}
+
+.navigate p {
+    margin-right: 15px;
+    text-decoration: underline;
+}
+</style>
+</html>

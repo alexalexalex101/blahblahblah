@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Job Postings</title>
+    <link rel="stylesheet" href="adminpage.css">     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Prociono&family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="rogersjs.js"></script>    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+#preview img {
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+    </style>
+</head>
+<body>
+
+
+<header style="display: flex; align-items: center; justify-content: space-between; height: 70px; position: relative;">
+<a href="index.html">
+    <img src="images/pctvs_header.png" style="height:50px;margin-left:5vw">
+</a>    <span id = "phonebye" style="position: absolute; left: 50%; transform: translateX(-50%);">Admin Panel</span>
+    <img src="images/bulldog-removebg.png" style="height:70px;margin-right:13vw">
+</header>
+    
+
+<div class="adminpagecontainer">
+    <h2>Current Job Postings</h2>
+
+    <!-- Button to remove all job postings -->
+    <button id="postingsbutton" onclick="clearAllPostings()">Remove All Jobs</button>
+
+    <table id="postings-list" class="postings-table">
+        <!-- Pending, approved, and hidden job postings here -->
+    </table>
+
+    <div id="no-postings-message"></div> <!-- Message for when there are no postings -->
+
+    <!-- Button to navigate to posted jobs page -->
+    <button id="view-all-button" onclick="location.href = 'index.html'">View All Job Postings</button>
+</div>
+
+<!-- Modal for editing job posting -->
+<div id="edit-modal" class="adminmodal">
+    <div class="admin-modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Edit Job Posting</h2>
+        <form id="edit-job-form">
+            <input type="text" id="job-title" class="form-input" placeholder="Job Title" required />
+            <input type="text" id="company-name" class="form-input" placeholder="Company Name" required />
+            <input type="text" id="job-location" class="form-input" placeholder="Location" required />
+            <input type="text" id="job-pay" class="form-input" placeholder="Pay" required />
+            <input type="text" id="description" class="form-input" placeholder="Description" required />
+            <input type="file" id="pthumbnail" placeholder="Posting Thumbnail" accept="image/*" required>    <div id="previewtext" style="color:black;">Preview:</div><br><div id="preview" style="color:black"></div>
+            <select id="employment-type" class="form-input">
+                <option value="full-time">Full-Time</option>
+                <option value="part-time">Part-Time</option>
+                <option value="contract">Contract</option>
+                <option value="internship">Internship</option>
+            </select>
+            
+            <select id="status" class="form-input">
+                <option value="approved">Approved</option>
+                <option value="pending">Pending</option>
+                <option value="hidden">Hidden</option>
+            </select>
+            <button type="submit" class="submit-btn">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+<script>
+
+
+// Render the postings into the table
+renderPostings();
+
+var imageholder
+
+document.getElementById("pthumbnail").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    const previewDiv = document.getElementById("preview");
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            previewDiv.removeChild(previewDiv.firstElementChild)
+            const img = document.createElement("img");
+            img.src = e.target.result;  // Set the image src to the data URL
+            imageholder = e.target.result;
+            previewDiv.innerHTML = "";  // Clear previous preview
+            previewDiv.appendChild(img);  // Show the image preview
+
+        };
+
+        reader.readAsDataURL(file);  // Convert the image to a data URL
+    }
+})
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employers</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Urbanist:700|Urbanist:400');
+    
+    body {
+      font-family: 'Urbanist';
+      font-weight: 400;
+    }
+    
+    h1, h2, h3, h4, h5 {
+      font-family: 'Urbanist';
+      font-weight: 700;
+    }
+    
+    html {font-size: 100%;} /* 16px */
+    
+    h1 {font-size: 4.210rem; /* 67.36px */}
+    
+    h2 {font-size: 3.158rem; /* 50.56px */}
+    
+    h3 {font-size: 2.369rem; /* 37.92px */}
+    
+    h4 {font-size: 1.777rem; /* 28.48px */}
+    
+    h5 {font-size: 1.333rem; /* 21.28px */}
+    
+    small {font-size: 0.750rem; /* 12px */}
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: #e2ecfc;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    nav li a {
+        font-size: 15px;
+        text-decoration: none;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 10%;
+        border-bottom: #9cb1db;
+        border: 1px;
+        margin-bottom:10px;
+        background-color: #3f79d6;
+    }
+    
+    body {
+        background-color: #030d1b;
+        
+    }
+    
+    #logo {
+        cursor: pointer;
+        text-decoration: none;
+    }
+    
+    #logo img {
+        width: auto;
+        height: 125px;
+    }
+    
+    nav ul {
+        list-style: none;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        padding: 0px 20px;
+    }
+    
+    nav ul li a {
+        transition: 0.5s;
+        font-size: 20px;
+    }
+    
+    footer {
+        background-color: #25467a;
+        bottom: 0;
+        justify-content: center;
+    }
+    
+    .items {
+        display: flex;
+        padding: 20px;
+        justify-content: space-around;
+    }
+    
+    .socials {
+        display: flex;
+        justify-content: space-around;
+        width: auto;
+        height: 20px;
+    }
+    
+    .socials a img{
+        margin-right: 10px;
+        width: auto;
+        height: 20px;
+    }
+    
+    .navigate {
+        display: flex;
+        color: #050315;
+    }
+    
+    .navigate p {
+        margin-right: 15px;
+    }
+    
+    
+    
+    
+    .general-info {
+        padding: 5% 10%;
+    }
+    
+    .general-info-container {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .information {
+        padding: 5%  60px;
+        background-color: #e2ecfc;
+        color: #030d1b;
+        border-radius: 20px;
+        width: 600px;
+        height: auto;
+    }
+    
+    .information p i {
+        color: #030d1b;
+        font-size: 20px;
+    }
+    
+    .process {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .process h5, .student-benefits h5 {
+        text-align: center;
+        color: #25467a;
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+    
+    #process-text {
+        margin-bottom: 10px;
+    }
+    
+    .process p, .process ul li {
+        color: #030d1b;
+        font-size: 20px;
+    }
+    
+    .process ul li strong {
+        color: #25467a;
+        font-size: 20px;
+    }
+    
+    
+    .student-benefits ul li {
+        color: #030d1b;
+        font-size: 20px;
+    }
+    
+    
+    
+    .employer-form {
+        background-color: #e2ecfc;
+        padding: 5% 10%;
+        border-radius: 20px;
+    }
+    
+    .employer-form form {
+        margin-bottom: 50px;
+    }
+    
+    .employer-form form h3 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #030d1b;
+    }
+    
+    .employer-form {
+        width: 600px;
+        top: 100px;
+        left: 40px;
+    }
+    
+    
+    .employer-form form input {
+        margin: 10px;
+        width: 100%;
+        padding: 10px 5px;
+        border: 0;
+        border-bottom: 1px solid black;
+        outline: none;
+        background: transparent;
+        color: #030d1b;
+    }
+    
+    .employer-form form input::placeholder {
+        color: #3f79d6;
+    }
+    
+    .btn-box {
+        width: 100%;
+        margin: 30px auto;
+        text-align: center;
+    }
+    
+    .btn-box button {
+        width: 110px;
+        height: 35px;
+        margin: 0 10px;
+        background-color: #3f79d6;
+        border-radius: 20px;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+    }
+    
+    .employer-form form select {
+        color: #030d1b;
+        width: 100%;
+        padding: 10px 5px;
+        text-align: center;
+    }
+    
+    .employer-form form select option {
+        color: #030d1b;
+    }
+    
+    
+    </style>
+
+</head>
+<body>
+    <header>
+        <a href="index.html" id="logo"><img src="images/guaranteed-logo.png" alt="guaranteed-logo"></a>
+        <nav>
+            <ul>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="jobs.html">JOBS</a></li>
+                <li><a href="employers.html">EMPLOYERS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="general-info">
+        <div class="general-info-container">
+            <div class="information">
+                <p><i>Welcome, Employers! This is your hub for posting job opportunities and discovering motivated students from Passaic County Technical-Vocational Schools (PCTVS). Let us help you find the best talent for your business</i></p>
+                <div class="process">
+                    <h5>How It Works</h5>
+                    <p id="process-text">A simple breakdown of how employers can use the platform:</p>
+                    <ul>
+                        <li><strong>Post a Job:</strong> Submit job opportunities by filling out a form with the position's details.</li>
+                        <li><strong>Job Approval:</strong> Our team will review and approve your job posting, ensuring it meets our guidelines.</li>
+                        <li><strong>Connect with Students:</strong> Once approved, your job will be displayed on the student-facing job board, and you'll begin receiving applications from interested students.</li>
+                    </ul>
+                </div>
+                <div class="student-benefits">
+                    <h5>Benefits of working with PCTVS students!</h5>
+                    <ul>
+                        <li>Access to motivated and skilled students from a variety of vocational programs.</li>
+                        <li>Ability to provide real-world experience to students while benefiting from fresh perspectives and energy.</li>
+                        <li>Direct engagement with the next generation of professionals in tech, engineering, business, and more.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="employer-form">
+                <form id="form1">
+                    <h3>SUBMIT A POSTING!</h3>
+                    <input type="text" id="cname" placeholder="Company Name" required="true"><br>
+                    <input type="text" id="cdescription" placeholder="Company Description" required><br>
+                    <input type="text" id="clocation" placeholder="Company Location" required><br>
+                    <span style="margin:10px;"><div style="font-weight:bold;color:#3f79d6">Choose Thumbnail</div><input type="file" id="pthumbnail" placeholder="Posting Thumbnail" accept="image/*" required>    <div id="previewtext" style="color:black;display:none;">Preview:</div><br><div id="preview" style="color:black"></div>
+                    </span><br>
+
+                    <!--
+                    <div class="btn-box">
+                        <button id="Next1" type="button">Next</button>
+                    </div>
+                    -->
+
+                <div style="height:8vh;"></div>
+                    <h3>JOB DESCRIPTION</h3>
+                    <input type="text" id="jtitle" placeholder="Job Title" required><br>
+                    <input type="text" id="jlocation" placeholder="Job Location" required><br>
+                    <input type="text" id="jdescription" placeholder="Job Description" required><br>
+                    <select id="jtype" name="Job Type">
+                        <option value="internship">Internship</option>
+                        <option value="contract">Contract</option>
+                        <option value="full-time">Full-Time</option>
+                        <option value="part-time">Part-time</option>
+                    </select>
+                    <input type="number" id="jpay" placeholder="Job Pay (Hourly)" required><br>
+
+                    <!--
+                    <div class="btn-box">
+                        <button id="Back1" type="button">Back</button>
+                        <button id="Next2" type="button">Next</button>
+                    </div>
+                -->
+
+                <div style="height:8vh;"></div>
+
+                    <h3>Contact</h3>
+                    <input type="email" id="jemail" placeholder="Company Email" required><br>
+                    <input type="tel" id="jphone" placeholder="Company Phone" required><br>
+                    <input type="tel" id="jfax" placeholder="Company Fax" required><br>
+
+                    <div class="btn-box">
+                        <button id="submit" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="items">
+            <div class="socials">
+                <a href = "https://www.instagram.com/pctvs1/"><img src="images/instaIcon.png" alt="Instagram Icon"></a>
+                <a href="https://www.youtube.com/@passaiccountytechnical-voc6240"><img src="images/youtubeIcon.png" alt="Youtube Icon"></a>
+                <a href="https://www.linkedin.com/school/pctvs/"><img src="images/linkedinIcon.png" alt="LinkedIn Icon"></a>
+            </div>
+            <div class="navigate">
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="privacypolicy.html">Privacy Policy & Terms of Service</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="copyright">
+                <p>@ 2025 GUARANTEED.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
+<script>
+    var form1 = document.getElementById("form1");
+    var form2 = documnet.getElementById("form2");
+    var form3 = document.getElementById("form3");
+
+    var next1 = document.getElementById("Next1");
+    var next2 = document.getElementById("Next2");
+    var back1 = document.getElementById("Back1");
+    var back2 = document.getElementById("Back2");
+
+    next1.onclick = function() {
+        
+    }
+</script>
+
+<script>
+    // Event handler which waits for form submission to create a new job posting to be approved 
+    var imageholder
+    document.getElementById('form1').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const companyName = document.getElementById('cname').value;
+        const companyDescription = document.getElementById('cdescription').value;
+        const companyLocation = document.getElementById('clocation').value;
+        const jobTitle = document.getElementById('jtitle').value;
+        const jobLocation = document.getElementById('jlocation').value;
+        const jobDescription = document.getElementById('jdescription').value;
+        const jobPhone = document.getElementById('jphone').value;
+        const jobEmail = document.getElementById('jemail').value;
+        const jobFax = document.getElementById('jfax').value;
+        const jobPay = document.getElementById('jpay').value;
+        const postingThumbnail= imageholder
+        const employmentType = document.getElementById('jtype').value;
+
+        const newPosting = {
+            id: Date.now(),
+            postingThumbnail,
+            companyName,
+            companyDescription,
+            companyLocation,
+            jobTitle,
+            jobLocation,
+            jobDescription,
+            jobPhone,
+            jobEmail,
+            jobFax,
+            jobPay,
+            employmentType,
+            status: 'pending', // Default job posting status
+        };
+
+        const postings = JSON.parse(localStorage.getItem('jPostings')) || [];
+        postings.push(newPosting);
+        localStorage.setItem('jPostings', JSON.stringify(postings));
+        document.getElementById("previewtext").style.display = "none"
+        const previewDiv2 = document.getElementById("preview");
+        previewDiv2.removeChild(previewDiv2.firstElementChild)
+        this.reset(); // Reset form fields
+        
+    });
+
+    document.getElementById("pthumbnail").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    const previewDiv = document.getElementById("preview");
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            const img = document.createElement("img");
+            img.src = e.target.result;  // Set the image src to the data URL
+            imageholder = e.target.result;
+            img.style.maxWidth = "300px";  // Limit the preview size
+            img.style.maxHeight = "300px";
+            previewDiv.innerHTML = "";  // Clear previous preview
+            document.getElementById("previewtext").style.display = "block"
+            previewDiv.appendChild(img);  // Show the image preview
+
+        };
+
+        reader.readAsDataURL(file);  // Convert the image to a data URL
+    } else {
+        previewDiv.innerHTML = "<p>No image selected</p>";
+    }
+    
+});
+
+</script>
+
+
+</html>
