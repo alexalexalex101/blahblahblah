@@ -5,22 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
 </head>
+<style>
+    #loginButton {
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: 0.5s;
+}
+
+    #loginButton:hover {
+        background: white;
+        color: #030d1b;
+    }
+</style>
 <body>
     <header>
         <a href="index.html" id="logo"><img src="images/guaranteed-logo.png" alt="guaranteed-logo"></a>
-        <nav>
+        <div class="hamburger-menu">
+            <div class="off-screen-menu">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="jobs.html">JOBS</a></li>
+                    <li><a href="employers.html">EMPLOYERS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="login.html" id="loginButton">LOGIN</a></li>
+                </ul>
+            </div>
+            <nav>
+                <div class="ham-menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+            </nav>
+        </div>
+        <nav id="desktop-nav">
             <ul>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="jobs.html">JOBS</a></li>
                 <li><a href="employers.html">EMPLOYERS</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="login.html" id="loginButton">LOGIN</a></li>
             </ul>
         </nav>
     </header>
     <section class="about-sec">
         <div class="about-sec-container">
             <h1>WHO ARE <span><strong>WE?</strong></span></h1>
-            <p>Guaranteed is designed to connect students with job opportunities while giving employers an efficient way to discover and engage with young talent. Our platform is simple, intuitive, and built to make the process seamless for everyone involved.</p>
+            <p>Guaranteed connects students with job opportunities while allowing employers to discover and engage with young talent. Our simple, intuitive platform is built to make the process seamless for everyone involved.</p>
             <ul>
                 <li><strong>For Students:</strong> Browse approved job postings tailored to your interests, apply directly, and take the first step toward your career goals.</li>
                 <li><strong>For Employers:</strong> Submit job postings effortlessly, connect with motivated students, and access a dedicated backend panel for efficient management.</li>
@@ -62,7 +96,7 @@
                 </div>
             </div>
             <h2 id="WHYKEY">WHY IT MATTERS?</h2>
-            <p>We believe that connecting students to real-world opportunities is the key to building their confidence, skills, and future careers. Employers benefit by finding enthusiastic and motivated candidates right from our school</p>
+            <p>Connecting students to real-world opportunities is the key to building their confidence, skills, and future careers. Employers benefit by finding enthusiastic and motivated candidates right from our school.</p>
         </div>
     </section>
     <footer>
@@ -130,7 +164,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 30px 8%;
     border-bottom: #9cb1db;
     border: 1px;
     margin-bottom:10px;
@@ -163,8 +197,9 @@ nav ul li {
 
 nav ul li a {
     transition: 0.5s;
-    font-size: 20px;
+    font-size: 25px;
 }
+
 footer {
     background-color: #25467a;
     bottom: 0;
@@ -285,5 +320,214 @@ footer {
     margin-top: 15px;
 }
 
+.hamburger-menu {
+    display: none;
+}
+
+@media only screen and (max-width: 391px) {
+
+    /* Menu and footer */
+
+    .hamburger-menu {
+        display: block;
+    }
+    
+    #desktop-nav {
+        display: none;
+    }
+
+    .off-screen-menu {
+        background-color:  rgb(34, 37, 49);
+        height: 100vh;
+        width: 100%;
+        max-width: 390px;
+        position: fixed;
+        top: 0;
+        right: -450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        justify-content: center;
+        text-align: center;
+        font-size: 3rem;
+        transition: .3s ease;
+    }
+
+    .off-screen-menu.active {
+        right: 0;
+    }
+
+    .off-screen-menu ul {
+        list-style: none;
+    }
+
+    .off-screen-menu ul li {
+        margin-bottom: 40px;
+        text-decoration: none;
+    }
+
+    .off-screen-menu ul li a {
+        font-size: 30px;
+        text-decoration: none;
+    }
+    
+    nav {
+        padding: 1rem;
+        display: flex;
+        background-color: transparent;
+    }
+    
+    .ham-menu {
+        height: 50px;
+        width: 40px;
+        margin-left: auto;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .ham-menu span {
+        height: 5px;
+        width: 100%;
+        background-color: #e2ecfc;
+        border-radius: 25px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+    }
+
+    .ham-menu span:nth-child(1) {
+        top: 25%;
+    }
+
+    .ham-menu span:nth-child(3) {
+        top: 75%;
+    }
+
+    .ham-menu.active span {
+        background-color: white;
+    }
+
+    .ham-menu.active span:nth-child(1) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .ham-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .ham-menu.active span:nth-child(3) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    #logo img {
+        height: 65px;
+    }
+
+    .items {
+        flex-direction: column;
+    }
+
+    .socials {
+        margin-bottom: 60px;
+    }
+
+    .socials a img{
+        height: 30px;
+    }
+
+    .navigate {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .navigate p {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .copyright {
+        text-align: center;
+        font-size: 20px;
+    }
+    /* End of menu and footer, this can be pasted on any page */
+
+    .about-sec-container {
+        text-align: center;
+    }
+
+    .about-sec-container h1 {
+        font-size: 50px;
+        margin-top: 20px;
+    }
+
+    .about-sec-container ul {
+        width: 250px;
+    }
+
+    .about-sec-container ul li {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .about-sec-container ul li strong {
+        color: #030d1b;
+    }
+
+    .mission-vision {
+        flex-direction: column;
+    }
+
+    .mission-vision div h2 {
+        font-size: 40px;
+    }
+
+    .key-features-container h1 {
+        font-size: 50px;
+        margin-top: 20px;
+    }
+
+    .key-features-container {
+        text-align: center;
+    }
+
+    .key-features-div {
+        flex-direction: column;
+    }
+
+    .key-features-div div h2 {
+        font-size: 40px;
+    }
+
+    .key-features-div div ul {
+        text-align: left;
+        font-size: 15px;
+        margin-left: 15px;
+    }
+
+    #WHYKEY {
+        font-size: 40px;
+    }
+
+    .key-features-container p {
+        margin-bottom: 20px;
+    }
+
+}
 </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamMenu = document.querySelector('.ham-menu');
+        const offScreenMenu = document.querySelector('.off-screen-menu');
+
+        hamMenu.addEventListener('click', function() {
+            hamMenu.classList.toggle('active');
+            offScreenMenu.classList.toggle('active');
+        });
+    });
+</script>
 </html>

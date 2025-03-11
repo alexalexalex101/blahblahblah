@@ -20,6 +20,10 @@ header {
         display:none;
 }
 
+#previewtext {
+    margin-top:10px;
+}
+
 .employpagecontainer {
     width: 80%;
     margin: 2vh auto;
@@ -436,12 +440,14 @@ button:hover {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
     padding-top: 60px;
+    align-items: center;
 }
 
 .admin-modal-content {
     background-color: white;
-    margin: 5% auto;
     padding: 30px;
+    margin:auto;
+    margin-bottom: 100px;
     border: 1px solid #888;
     width: 90%;
     max-width: 500px;

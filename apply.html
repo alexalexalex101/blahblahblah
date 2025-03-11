@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="rogersjs.js" defer></script>
+
+</head>
+<style>
+    #loginButton {
+        text-align: center;
+        border: 2px solid white;
+        border-radius: 20px;
+        padding: 10px 20px;
+        transition: 0.5s;
+    }
+
+    #loginButton:hover {
+        background: white;
+        color: #030d1b;
+    }
+
+    html {
+        min-height: 100vh;
+        margin:0;
+    }
+    .main-content {
+    flex-grow: 1;
+}
+
+.hamburger-menu {
+    display: none;
+}
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamMenu = document.querySelector('.ham-menu');
+        const offScreenMenu = document.querySelector('.off-screen-menu');
+
+        hamMenu.addEventListener('click', function() {
+            hamMenu.classList.toggle('active');
+            offScreenMenu.classList.toggle('active');
+        });
+    });
+</script>
+<body>
+    <header>
+        <a href="index.html" id="logo"><img src="images/guaranteed-logo.png" alt="guaranteed-logo"></a>
+        <div class="hamburger-menu">
+            <div class="off-screen-menu">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="jobs.html">JOBS</a></li>
+                    <li><a href="employers.html">EMPLOYERS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="login.html" id="loginButton">LOGIN</a></li>
+                </ul>
+            </div>
+            <nav>
+                <div class="ham-menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+            </nav>
+        </div>
+        <nav id="desktop-nav">
+            <ul>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="jobs.html">JOBS</a></li>
+                <li><a href="employers.html">EMPLOYERS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="login.html" id="loginButton">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div class="main-content">
+    <div class="container">
+        <h3 class="title"> Apply Page </h3>
+    </div>
+</div>
+
+    <div class = "centerer">
+        <div class="apply-page-container" id="applyPageContainer">
+            <div class="forms-containment" id = "form-containment">
+                <form id="form1">
+                    <h3>Who are you?</h3>
+                    <input type="text" id="fname" placeholder="Full Name" required><br>
+                    <input type="number" id="student-id" placeholder="Student ID" required>
+                    <input type="number" id="grade" placeholder="Grade" required maxlength="1" min="9" max="12"><br>
+
+                    <div class="btn-box">
+                        <button type="button" class="next-btn" id="next1">Next</button>
+                    </div>
+                </form>
+                
+                <form id="form2">
+                    <h3>Contact Information</h3>
+                    <input type="email" id="email" placeholder="Email" autocapitalize="none" required><br>
+                    <input type="tel" id="phone" placeholder="Phone Number" required><br><br>
+                    <div class="city-address-container">
+                        <input type="text" id="streetAddress" placeholder="Street Address" required>
+                        <input type="text" id="city" placeholder="City" required>
+                    </div>
+                    <div class="state-zip-container">
+                        <input type="text" id="state" placeholder="State" required>
+                        <input type="number" id="zip" placeholder="Zip Code" required>
+                    </div>
+
+                    <div class="btn-box">
+                        <button type="button" class="back-btn" id="back1">Back</button>
+                        <button type="button" class="next-btn" id="next2">Next</button>
+                    </div>
+                </form>
+        
+                <form id="form3">
+                    <h3>Let us get to know you a little bit more!</h3>
+                    <input type="text" id="interests-hobbies" placeholder="What are your interests and hobbies" required="true" autocapitalize="none"><br>
+                    <input type="text" id="aspirations" placeholder="What are your aspirations in the next 5 years" required="true"><br>
+                    <br><p>Please upload your resume</p>
+                    <input type="file" name="resume" id="resume" required="true"><br>
+    
+                    <div class="btn-box" id="buttonbox">
+                        <button type="button" class="back-btn" id="back2">Back</button>
+                        <button type="button" id="submitButton" onclick="submitButtonProcedure()">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+        <div class = "preview" id = "thanku">
+            <form id="form1">
+                <h3>Who are you?</h3>
+                <input type="text" id="fname" placeholder="Full Name" required><br>
+                <input type="number" id="student-id" placeholder="Student ID" required>
+                <input type="number" id="grade" placeholder="Grade" required maxlength="1" min="9" max="12"><br>
+
+                <div class="btn-box">
+                    <button type="button" class="next-btn" id="next1">Next</button>
+                </div>
+            </form>
+            
+            <form id="form2">
+                <h3>Contact Information</h3>
+                <input type="email" id="email" placeholder="Email" autocapitalize="none" required><br>
+                <input type="tel" id="phone" placeholder="Phone Number" required><br><br>
+                <div class="city-address-container">
+                    <input type="text" id="streetAddress" placeholder="Street Address" required>
+                    <input type="text" id="city" placeholder="City" required>
+                </div>
+                <div class="state-zip-container">
+                    <input type="text" id="state" placeholder="State" required>
+                    <input type="number" id="zip" placeholder="Zip Code" required>
+                </div>
+
+                <div class="btn-box">
+                    <button type="button" class="back-btn" id="back1">Back</button>
+                    <button type="button" class="next-btn" id="next2">Next</button>
+                </div>
+            </form>
+    
+            <form id="form3">
+                <h3>Let us get to know you a little bit more!</h3>
+                <input type="text" id="interests-hobbies" placeholder="What are your interests and hobbies" required="true" autocapitalize="none"><br>
+                <input type="text" id="aspirations" placeholder="What are your aspirations in the next 5 years" required="true"><br>
+                <br><p>Please upload your resume</p>
+                <input type="file" name="resume" id="resume" required="true"><br>
+
+                <div class="btn-box" id="buttonbox">
+                    <button type="button" class="back-btn" id="back2">Back</button>
+                    <button type="button" id="submitButton" onclick="submitButtonProcedure()">Submit</button>
+                </div>
+            </form>
+        </div>
+        </div>
+
+        </div> 
+    </div>
+    <footer>
+        <div class="items">
+            <div class="socials">
+                <a href = "https://www.instagram.com/pctvs1/"><img src="images/instaIcon.png" alt="Instagram Icon"></a>
+                <a href="https://www.youtube.com/@passaiccountytechnical-voc6240"><img src="images/youtubeIcon.png" alt="Youtube Icon"></a>
+                <a href="https://www.linkedin.com/school/pctvs/"><img src="images/linkedinIcon.png" alt="LinkedIn Icon"></a>
+            </div>
+            <div class="navigate">
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="privacypolicy.html">Privacy Policy & Terms of Service</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="copyright">
+                <p>@ 2025 GUARANTEED.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var form1 = document.getElementById("form1");
+        var form2 = document.getElementById("form2");
+        var form3 = document.getElementById("form3");
+
+        var next1 = document.getElementById("next1");
+        var next2 = document.getElementById("next2");
+        var back1 = document.getElementById("back1");
+        var back2 = document.getElementById("back2");
+
+        form1.style.display = "block";
+        form2.style.display = "none";
+        form3.style.display = "none";
+
+        next1.onclick = function () {
+            var fname = document.getElementById("fname");
+            var studentId = document.getElementById("student-id");
+            var grade = document.getElementById("grade");
+
+            var passable = true;
+
+            if(fname.value == "") {
+                fname.style.borderColor = "#990F02";
+                fname.style.animationName = "shake";
+                fname.style.animationDuration = "0.25s"
+                fname.style.animationIterationCount = "2";
+                passable = false;
+            } else {
+                fname.style.borderColor = "#e2ecfc";
+                fname.style.animationName = "none";
+            }
+
+            if(studentId.value == "") {
+                studentId.style.borderColor = "#990F02";
+                studentId.style.animationName = "shake";
+                studentId.style.animationDuration = "0.25s"
+                studentId.style.animationIterationCount = "2";
+                passable = false;
+            } else {
+                studentId.style.borderColor = "#e2ecfc";
+                studentId.style.animationName = "none";
+            }
+
+            if(grade.value == "") {
+                grade.style.borderColor = "#990F02";
+                grade.style.animationName = "shake";
+                grade.style.animationDuration = "0.25s"
+                grade.style.animationIterationCount = "2";
+                passable = false;
+            } else if(grade.value < 9 || grade.value > 12) {
+                grade.style.borderColor = "#990F02";
+                alert("Please enter a grade between 9-12");
+                grade.style.animationName = "shake";
+                grade.style.animationDuration = "0.25s"
+                grade.style.animationIterationCount = "2";
+                return;
+            } else {
+                grade.style.borderColor = "#e2ecfc"
+                grade.style.animationName = "none";
+            }
+
+            if(passable == false) {
+                alert("Please fill out all required fields.");
+                return;
+            }
+
+            form1.style.display = "none";
+            form2.style.display = "block";
+            form2.style.animationName = "slideIn";
+            form2.style.animationDuration = "0.75s";
+        };
+
+        back1.onclick = function () {
+            form1.style.display = "block";
+            form2.style.display = "none";
+            form1.style.animationName = "slideOut";
+            form1.style.animationDuration = "0.75s";
+        };
+
+        next2.onclick = function () {
+            var email = document.getElementById("email");
+            var phone = document.getElementById("phone");
+            var streetAdress = document.getElementById("streetAddress");
+            var city = document.getElementById("city");
+            var state = document.getElementById("state");
+            var zip = document.getElementById("zip");
+
+            var passable = true;
+
+            if(email.value == "") {
+                email.style.borderColor = "#990F02";
+                email.style.animationName = "shake";
+                email.style.animationDuration= "0.25s";
+                email.style.animationIterationCount = "2";
+                passable = false;
+            } else {
+                email.style.borderColor = "#e2ecfc";
+                email.style.animationName = "none";
+            }
+
+            if(phone.value == "") {
+                phone.style.borderColor = "#990F02";
+                phone.style.animationName = "shake";
+                phone.style.animationDuration= "0.25s";
+                phone.style.animationIterationCount = "2";
+                passable = false;
+            } else {
+                phone.style.borderColor = "#e2ecfc";
+                phone.style.animationName = "none";
+            }
+
+            if(streetAdress.value == "") {
+                streetAdress.style.borderColor = "#990F02";
+                streetAdress.style.animationName = "shake";
+                streetAdress.style.animationDuration= "0.25s";
+                streetAdress.style.animationIterationCount = "2";
+                passable = false;
+            } else {
+                streetAdress.style.borderColor = "#e2ecfc";
+                streetAdress.style.animationName = "none";
+            }    
+            
+            if(city.value == "") {
+                city.style.borderColor = "#990F02";
+                city.style.animationName = "shake";
+                city.style.animationDuration= "0.25s";
+                city.style.animationIterationCount = "2";
+                passable = false;
+            } else {
+                city.style.borderColor = "#e2ecfc";
+                city.style.animationName = "none";
+            }     
+
+            if(state.value == "") {
+                state.style.borderColor = "#990F02";
+                state.style.animationName = "shake";
+                state.style.animationDuration= "0.25s";
+                state.style.animationIterationCount = "2";
+                passable = false;
+            } else {
+                state.style.borderColor = "#e2ecfc";
+                state.style.animationName = "none";
+            }  
+            
+            if(zip.value == "") {
+                zip.style.borderColor = "#990F02";
+                zip.style.animationName = "shake";
+                zip.style.animationDuration= "0.25s";
+                zip.style.animationIterationCount = "2";
+                passable = false;
+            } else {
+                zip.style.borderColor = "#e2ecfc";
+                zip.style.animationName = "none";
+            }   
+
+            if(passable == false) {
+                alert("Please fill out all required fields.");
+                return;
+            }
+
+
+            form2.style.display = "none";
+            form3.style.display = "block";
+            form3.style.animationDuration = "0.75s";
+        };
+
+        back2.onclick = function () {
+            form2.style.display = "block";
+            form3.style.display = "none";
+            form2.style.animationName = "slideOut";
+            form2.style.animationDuration = "0.75s";
+        };
+
+        var formExitButton = document.getElementById("exitButton");
+        var applyPage = document.getElementById("applyPageContainer");
+
+    });
+</script>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Urbanist:700|Urbanist:400');
+
+body {
+  font-family: 'Urbanist';
+  font-weight: 400;
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Urbanist';
+  font-weight: 700;
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 4.210rem; /* 67.36px */}
+
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+small {font-size: 0.750rem; /* 12px */}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #e2ecfc;
+    transition: all .2s linear;
+    text-decoration: none;
+    outline: none; border: none;
+    text-transform: capitalize;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+nav li a {
+    font-size: 15px;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    border-bottom: #9cb1db;
+    border: 1px;
+    margin-bottom:10px;
+    background-color: #3f79d6;
+}
+
+body {
+    background-color: #030d1b;
+    
+}
+
+#logo {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#logo img {
+    width: auto;
+    height: 125px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+nav ul li a {
+    transition: 0.5s;
+    font-size: 25px;
+}
+
+footer {
+    background-color: #25467a;
+    bottom: 0;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin:0 auto;
+    padding:2rem 2rem;
+    display:flex;
+    flex-direction: column;
+}
+
+.container .title {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.centerer {
+    display: flex;
+    width:100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.items {
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+    height: 20px;
+}
+
+.socials a img{
+    margin-right: 10px;
+    width: auto;
+    height: 20px;
+}
+
+.navigate {
+    display: flex;
+    color: #050315;
+}
+
+.navigate p {
+    margin-right: 15px;
+    text-decoration: underline;
+}
+
+#exitButton {
+    position:absolute;
+    top:1rem; right:1.5rem;
+    cursor:pointer;
+    color:#e2ecfc;
+    background-color: transparent;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+#exitButton:hover {
+    transform: rotate(90deg);
+}
+
+.apply-page-container {
+    background: #25467a;
+    margin: 2rem;
+    position: relative;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.preview .buttons:hover {
+    cursor:pointer;
+}
+
+.preview {
+    display: none;
+    padding: 2rem;
+    text-align:center;
+    justify-content: center;
+    background:#25467a;
+    position: relative;
+    margin:2rem;
+    width:40rem;
+    flex-direction: column;
+}
+
+.preview.active {
+    display:inline-block;
+}
+
+.preview img {
+    height: 20rem;
+    width: 100%;
+    overflow: hidden;
+    object-fit: contain;
+}
+
+.preview .fa-times {
+    position:absolute;
+    top:1rem; right:1.5rem;
+    cursor:pointer;
+    color:#e2ecfc;
+    font-size: 4rem;
+}
+
+.preview .fa-times:hover {
+    transform: rotate(90deg);
+}
+
+.preview h3 {
+    padding:.5rem 0;
+    font-size:2.5rem;
+}
+
+.preview p {
+    line-height: 1.5;
+    padding:1rem 0;
+    font-size:1rem;
+}
+
+.preview .salary {
+    font-size: 2rem;
+    padding:0.5rem 0;
+}
+
+.preview .buttons {
+    background-color: #2f27ce;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 15px;
+    height: auto;
+    padding: 16px 30px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.5s;
+    font-family: 'Urbanist';
+}
+
+.thanku-container {
+    display:none;
+    background: #25467a;
+    margin: 2rem;
+    position: relative;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.forms-containment {
+    text-align: center;
+    padding: 70px 70px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(-100px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-10px);
+    }
+
+    25% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.forms-containment form {
+    color: #25467a;
+    animation-name: slideIn;
+    animation-duration: 0s;
+}
+
+.forms-containment form h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #e2ecfc;
+}
+
+.forms-containment form input, #firstnum,#lastnum {
+    margin: 10px;
+    width: 100%;
+    padding: 10px 5px;
+    border: 0;
+    border-bottom: 2px solid #e2ecfc;
+    outline: none;
+    background: transparent;
+    color: #e2ecfc;
+    text-transform: none;
+}
+
+#firstnum,#lastnum {
+    text-align: center;
+}
+
+.filter-container .filters #firstnum, #lastnum {
+    width:50px;
+}
+
+.forms-containment form input::placeholder {
+    color: rgb(172, 172, 172);
+}
+
+
+.city-address-container, .state-zip-container {
+    display: flex;
+    gap: 10px; 
+}
+
+.city-address-container input, .state-zip-container input {
+    flex: 1;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.btn-box button {
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+    background: #3f79d6;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#form2 {
+    left: 450px;
+    display: none;
+}
+
+#form3 {
+    left: 450px;
+    display: none;
+}
+
+@media only screen and (max-width: 1195px) and (min-width: 1190px) {
+    /* Header and footer */
+    #logo img {
+        height: 100px;
+    }
+
+    nav ul li {
+        padding: 0px 10px;
+    }
+
+    nav ul li a {
+        font-size: 23px;
+    }
+
+    .navigate {
+        margin-left: 10px;
+    }
+
+    /* Header and footer */
+}
+
+@media only screen and (max-width: 391px) {
+
+/* Menu and footer */
+
+.hamburger-menu {
+    display: block;
+}
+
+#desktop-nav {
+    display: none;
+}
+
+.off-screen-menu {
+    background-color:  rgb(34, 37, 49);
+    height: 100vh;
+    width: 100%;
+    max-width: 390px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
+}
+
+.off-screen-menu.active {
+    right: 0;
+    z-index: 2;
+}
+
+.off-screen-menu ul {
+    list-style: none;
+}
+
+.off-screen-menu ul li {
+    margin-bottom: 40px;
+    text-decoration: none;
+}
+
+.off-screen-menu ul li a {
+    font-size: 30px;
+    text-decoration: none;
+}
+
+nav {
+    padding: 1rem;
+    display: flex;
+    background-color: transparent;
+}
+
+.ham-menu {
+    height: 50px;
+    width: 40px;
+    margin-left: auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: #e2ecfc;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+    z-index: 2;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span {
+    background-color: white;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#logo img {
+    height: 65px;
+}
+
+.items {
+    flex-direction: column;
+}
+
+.socials {
+    margin-bottom: 60px;
+}
+
+.socials a img{
+    height: 30px;
+}
+
+.navigate {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.navigate p {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 20px;
+}
+/* End of menu and footer, this can be pasted on any page */
+
+.apply-page-container {
+    margin-right: 50px;
+}
+
+#thanku {
+    width: 250px;
+}
+
+}
+
+</style>
+
+</html>

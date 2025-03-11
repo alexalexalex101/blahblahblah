@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css?family=Urbanist:700|Urbanist:400');
+
+body {
+font-family: 'Urbanist';
+font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+font-family: 'Urbanist';
+font-weight: 700;
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 4.210rem; /* 67.36px */}
+
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+small {font-size: 0.750rem; /* 12px */}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+color: #e2ecfc;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+nav li a {
+font-size: 15px;
+text-decoration: none;
+}
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 30px 8%;
+border-bottom: #9cb1db;
+border: 1px;
+margin-bottom:10px;
+background-color: #3f79d6;
+}
+
+body {
+background-color: #030d1b;
+
+}
+
+#logo {
+cursor: pointer;
+text-decoration: none;
+}
+
+#logo img {
+width: auto;
+height: 125px;
+}
+
+nav ul {
+list-style: none;
+}
+
+nav ul li {
+display: inline-block;
+padding: 0px 20px;
+}
+
+nav ul li a {
+transition: 0.5s;
+font-size: 25px;
+}
+
+footer {
+background-color: #25467a;
+bottom: 0;
+justify-content: center;
+}
+
+.items {
+display: flex;
+padding: 20px;
+justify-content: space-around;
+}
+
+.socials {
+display: flex;
+justify-content: space-around;
+width: auto;
+height: 20px;
+}
+
+.socials a img{
+margin-right: 10px;
+width: auto;
+height: 20px;
+}
+
+.navigate {
+display: flex;
+color: #050315;
+}
+
+.navigate p {
+margin-right: 15px;
+}
+
+
+
+
+.general-info {
+padding: 5% 10%;
+}
+
+.general-info-container {
+display: flex;
+justify-content: space-around;
+}
+
+.information {
+padding: 5%  60px;
+background-color: #e2ecfc;
+color: #030d1b;
+border-radius: 20px;
+width: 600px;
+height: auto;
+}
+
+.information p i {
+color: #030d1b;
+font-size: 20px;
+}
+
+.process {
+margin-top: 20px;
+margin-bottom: 40px;
+}
+
+.process h5, .student-benefits h5 {
+text-align: center;
+color: #25467a;
+margin-bottom: 10px;
+font-size: 25px;
+}
+
+#process-text {
+margin-bottom: 10px;
+}
+
+.process p, .process ul li {
+color: #030d1b;
+font-size: 20px;
+}
+
+.process ul li strong {
+color: #25467a;
+font-size: 20px;
+}
+
+
+.student-benefits ul li {
+color: #030d1b;
+font-size: 20px;
+}
+
+
+
+.employer-form {
+background-color: #e2ecfc;
+padding: 5% 10%;
+border-radius: 20px;
+}
+
+.employer-form form {
+margin-bottom: 50px;
+}
+
+.employer-form form h3 {
+text-align: center;
+margin-bottom: 40px;
+color: #030d1b;
+}
+
+.employer-form {
+width: 600px;
+top: 100px;
+left: 40px;
+}
+
+
+.employer-form form input {
+margin: 10px;
+width: 100%;
+padding: 10px 5px;
+border: 0;
+border-bottom: 1px solid black;
+outline: none;
+background: transparent;
+color: #030d1b;
+}
+
+.employer-form form select {
+margin: 10px;
+}
+
+.employer-form form input::placeholder {
+color: #3f79d6;
+}
+
+.btn-box {
+width: 100%;
+margin: 30px auto;
+text-align: center;
+}
+
+.btn-box button {
+width: 110px;
+height: 35px;
+margin: 0 10px;
+background-color: #3f79d6;
+border-radius: 20px;
+border: 0;
+outline: none;
+cursor: pointer;
+}
+
+.employer-form form select {
+color: #030d1b;
+width: 100%;
+padding: 10px 5px;
+text-align: center;
+}
+
+.employer-form form select option {
+color: #030d1b;
+}
+
+.formlabel {
+margin:10px;
+font-weight:bold;
+color:#3f79d6
+}
+
+
+@keyframes shake { 
+0% {
+transform: translateX(-10px);
+}
+
+25% {
+transform: translateX(0);
+}
+
+50% {
+transform: translateX(10px);
+}
+
+75% {
+transform: translateX(5px);
+}
+
+100% {
+transform: translateX(0);
+}
+}
+
+#loginButton {
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: 0.5s;
+}
+
+#loginButton:hover {
+background: white;
+color: #030d1b;
+}
+
+.student-images {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+margin-top: 50px;
+}
+
+.student-images h2 {
+color: #25467a;
+font-size: 40px;
+}
+
+.student-images img {
+width: 400px;
+height: auto;
+margin-top: 30px;
+border-radius: 8px;
+}
+
+.hamburger-menu {
+display: none;
+}
+
+@media only screen and (max-width: 391px) {
+
+/* Menu and footer */
+
+.hamburger-menu {
+display: block;
+}
+
+#desktop-nav {
+display: none;
+}
+
+.off-screen-menu {
+background-color:  rgb(34, 37, 49);
+height: 100vh;
+width: 100%;
+max-width: 390px;
+position: fixed;
+top: 0;
+right: -450px;
+display: flex;
+flex-direction: column;
+align-items: center;    
+justify-content: center;
+text-align: center;
+font-size: 3rem;
+transition: .3s ease;
+}
+
+.off-screen-menu.active {
+right: 0;
+}
+
+.off-screen-menu ul {
+list-style: none;
+}
+
+.off-screen-menu ul li {
+margin-bottom: 40px;
+text-decoration: none;
+}
+
+.off-screen-menu ul li a {
+font-size: 30px;
+text-decoration: none;
+}
+
+nav {
+padding: 1rem;
+display: flex;
+background-color: transparent;
+}
+
+.ham-menu {
+height: 50px;
+width: 40px;
+margin-left: auto;
+position: relative;
+cursor: pointer;
+}
+
+.ham-menu span {
+height: 5px;
+width: 100%;
+background-color: #e2ecfc;
+border-radius: 25px;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+top: 75%;
+}
+
+.ham-menu.active span {
+background-color: white;
+}
+
+.ham-menu.active span:nth-child(1) {
+top: 50%;
+transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+top: 50%;
+transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#logo img {
+height: 65px;
+}
+
+.items {
+flex-direction: column;
+}
+
+.socials {
+margin-bottom: 60px;
+}
+
+.socials a img{
+height: 30px;
+}
+
+.navigate {
+flex-direction: column;
+text-align: center;
+margin-bottom: 40px;
+}
+
+.navigate p {
+margin-bottom: 10px;
+font-size: 20px;
+}
+
+.copyright {
+text-align: center;
+font-size: 20px;
+}
+/* End of menu and footer, this can be pasted on any page */
+
+.general-info-container {
+flex-direction: column;
+}
+
+.information {
+width: 300px;
+}
+
+#informationQuote {
+margin-top: 20px;
+font-size: 15px;
+}
+
+.process ul li, .student-benefits ul li {
+margin-top: 20px;
+}
+
+.student-images h2 {
+font-size: 40px;
+}
+
+.student-images img {
+width: 250px;
+height: auto;
+}
+
+.employer-form {
+width: 300px;
+margin-top: 40px;
+}
+
+.employer-form form {
+text-align: center;
+}
+
+.employer-form form input {
+margin-bottom: 10px;
+}
+
+#previewimg {
+max-width: 100px;
+border-radius: 20px;
+}
+
+}
+
+@media only screen and (max-width: 1195px) and (min-width: 1190px) {
+/* Header and footer */
+#logo img {
+height: 100px;
+}
+
+nav ul li {
+padding: 0px 10px;
+}
+
+nav ul li a {
+font-size: 23px;
+}
+
+#KimPhoto {
+height: 450px;
+}
+
+.navigate {
+margin-left: 10px;
+}
+
+/* Header and footer */
+
+.information {
+margin-right: 40px;
+}
+}

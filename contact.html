@@ -5,40 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
 </head>
+<style>
+    #loginButton {
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: 0.5s;
+}
+
+    #loginButton:hover {
+        background: white;
+        color: #030d1b;
+    }
+</style>
 <body>
     <header>
         <a href="index.html" id="logo"><img src="images/guaranteed-logo.png" alt="guaranteed-logo"></a>
-        <nav>
+        <div class="hamburger-menu">
+            <div class="off-screen-menu">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="jobs.html">JOBS</a></li>
+                    <li><a href="employers.html">EMPLOYERS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="login.html" id="loginButton">LOGIN</a></li>
+                </ul>
+            </div>
+            <nav>
+                <div class="ham-menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+            </nav>
+        </div>
+        <nav id="desktop-nav">
             <ul>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="jobs.html">JOBS</a></li>
                 <li><a href="employers.html">EMPLOYERS</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="login.html" id="loginButton">LOGIN</a></li>
             </ul>
         </nav>
     </header>
     <div class="homeCoverContainer">
-        <img src="images/pctvs.jpeg" alt="pctvs">
-        <h1>WHERE PCTVS STUDENTS GET JOBS</h1>
+        <img src="images/pctvs-1.png" alt="pctvs">
+        <h1>Empowering PCTVS Students:<br>Your Path to Career Success Starts Here!</h1>
     </div>
-    <section>
-        <div class="outerInfo">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.3514582137786!2d-74.20601182414555!3d40.929963871361736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fd911a4fc7c7%3A0xfe17b95cbbdd8c0d!2sPassaic%20County%20Technical%20Institute!5e0!3m2!1sen!2sus!4v1714953942154!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <div class="info">
-                <h1>Address</h1>
-                <p>45 Reinhardt Rd, Wayne, New Jersey</p>
-                <h1>Email</h1>
-                <p>guidance@pctvs.org</p>
-                <h1>Phone</h1>
-                <p>+1 123-456-7890</p>
-                <div class="infoSocials">
-                    <a href = "https://www.instagram.com/pctvs1/"><img src="images/instaIcon.png" alt="Instagram Icon"></a>
-                    <a href="https://www.youtube.com/@passaiccountytechnical-voc6240"><img src="images/youtubeIcon.png" alt="Youtube Icon"></a>
-                    <a href="https://www.linkedin.com/school/pctvs/"><img src="images/linkedinIcon.png" alt="LinkedIn Icon"></a>
+    <div id="centerer">
+        <div id="midbody">
+            <h1 id="bodyheader"> When Should You Contact Us?</h1>
+            <p>You might want to contact us if:</p>
+            <div id="faqs">
+                <div id="studentsfaq">
+                    <p class="header">Students:</p>
+                    <ul class="reasonslist">
+                        <li class="listtextcontact">If you need help creating or improving your resume.</li>
+                        <li class="listtextcontact">If you are unsure that you meet all the requirements to have a job.</li>
+                        <li class="listtextcontact">If you have any general inquiries.</li>
+                        <li class="listtextcontact">If you're unsure how to apply for a job listed on our site.</li>
+                        <li class="listtextcontact">If you suspect a job listing is fraudulent or misleading.</li>
+                        <li class="listtextcontact">If you want to report inappropriate content or behavior.</li>
+                        <li class="listtextcontact">If you find any issues with this website.</li>
+                        <li class="listtextcontact">If you would like to no longer recieve our newsletter.</li>
+                      </ul>
+                </div>
+                <div id="employersfaq">
+                    <p class="header">Employers:</p>
+                    <ul class="reasonslist">
+                        <li class="listtextcontact">If you want to post a job opportunity for students.</li>
+                        <li class="listtextcontact">If you need help managing or editing your job listings.</li>
+                        <li class="listtextcontact">If you're unsure whether your job listing meets our guidelines.</li>
+                        <li class="listtextcontact">If you want to promote or feature your job posting.</li>
+                        <li class="listtextcontact">If you suspect fraudulent applications or misuse of your listing.</li>
+                        <li class="listtextcontact">If you want to report inappropriate content or behavior.</li>
+                        <li class="listtextcontact">If you find any issues with this website.</li>
+                        <li class="listtextcontact">If you need assistance with hiring best practices for student employees.</li>
+                      </ul>
                 </div>
             </div>
+            <p id="bodytext">You can contact us anywhere listed below.</p>
         </div>
-    </section>
+    </div>
+    <div id="sectiondiv">
+        <section>
+            <div class="outerInfo">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.3514582137786!2d-74.20601182414555!3d40.929963871361736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fd911a4fc7c7%3A0xfe17b95cbbdd8c0d!2sPassaic%20County%20Technical%20Institute!5e0!3m2!1sen!2sus!4v1714953942154!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="info">
+                    <h1>Address</h1>
+                    <p>45 Reinhardt Rd, Wayne, New Jersey</p>
+                    <h1>Email</h1>
+                    <p>guidance@pctvs.org</p>
+                    <h1>Phone</h1>
+                    <p>+1 973-389-4236</p>
+                    <div class="infoSocials">
+                        <a href = "https://www.instagram.com/pctvs1/"><img src="images/instaIcon.png" alt="Instagram Icon"></a>
+                        <a href="https://www.youtube.com/@passaiccountytechnical-voc6240"><img src="images/youtubeIcon.png" alt="Youtube Icon"></a>
+                        <a href="https://www.linkedin.com/school/pctvs/"><img src="images/linkedinIcon.png" alt="LinkedIn Icon"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <footer>
         <div class="items">
             <div class="socials">
@@ -59,25 +130,49 @@
 </body>
 <style>
 
+@import url('https://fonts.googleapis.com/css?family=Urbanist:700|Urbanist:400');
+
 section {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     background-color: #25467a;
-    padding: 20px;
+    padding: 40px;
     font-family: "Urbanist", sans-serif;
+    border-radius: 10px;
+    width: 80%;
+}
+
+#sectiondiv {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 
 
 .homeCoverContainer {
+    font-family: "Urbanist", sans-serif;
     position: relative;
     width: 100%;
-    background-color: #fbfbfe;
+    background-color: transparent;
+    text-align: center;
     margin-bottom: 10px;
+    margin-top: 25px;
+    text-shadow: 
+    -2px 0 black, 
+     0 2px black, 
+     2px 0 black, 
+     0 -2px black,
+    -2px -2px black,
+    -2px 2px black,
+     2px -2px black,
+     2px 2px black;
 }
 
 .homeCoverContainer img {
-    width: 100%;
-    height: 500px;
-    filter: blur(7px);
+    width: full;
+    height: 600px;
+    border-radius: 20px;
+    filter: blur(2px);
 }
 
 .homeCoverContainer h1 {
@@ -87,7 +182,7 @@ section {
     transform: translate(-50%, -50%);
     color: white;
     font-size: 40px;
-    font-weight: bolder;
+    font-weight: 400;
     font-family: "Urbanist", sans-serif;
 }
 
@@ -95,7 +190,8 @@ section {
 .infoSocials a img {
     width: 30px;
     height: auto;
-    margin-right: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .infoSocials {
@@ -123,7 +219,11 @@ section {
 }
 
 .outerInfo div h1 {
-    color: #050315;
+    color: white;
+    font-family: "Urbanist", sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
 }
 
 .outerInfo div p {
@@ -131,13 +231,96 @@ section {
     margin-bottom: 20px;
 }
 
+.infoSocials {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 50px;
+    gap: 20px; 
+}
+
+.infoSocials a {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        text-align:center;
+    }    
+
+    .infoSocials img {
+        margin:0;
+        padding:0;
+    }        
+
+#bodyheader {
+    font-family: "Urbanist", sans-serif;
+    margin-bottom: 10px;
+}
+
+#midbody {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: "Urbanist", sans-serif;
+    width: fit-content;
+}
+
+.listtextcontact {
+    font-family: "Urbanist", sans-serif;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+#bodytext {
+    margin-top: 25px;
+    justify-content: center;
+    text-align: center;
+    font-family: "Urbanist", sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#centerer {
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: "Urbanist", sans-serif;
+}
+
+#studentsfaq {
+    align-items: center;
+    justify-content: center;
+    font-family: "Urbanist", sans-serif;
+}
+
+#employersfaq {
+    align-items: center;
+    justify-content: center;
+    font-family: "Urbanist", sans-serif;
+}
+
+#faqs {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px; 
+    padding: 20px;
+    font-family: "Urbanist", sans-serif;
+}
+
+.header {
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.reasonslist {
+    list-style-position: inside;
+    text-align: center;
+}
 
 
 
-
-
-
-@import url('https://fonts.googleapis.com/css?family=Urbanist:700|Urbanist:400');
 
 body {
   font-family: 'Urbanist';
@@ -163,7 +346,7 @@ html {
 }
 
 nav li a {
-    font-size: 20px;
+    font-size: 25px;
     text-decoration: none;
 }
 
@@ -171,7 +354,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 30px 8%;
     border-bottom: #9cb1db;
     border: 1px;
     margin-bottom:10px;
@@ -226,7 +409,6 @@ footer {
 }
 
 .socials a img{
-    margin-right: 10px;
     width: auto;
     height: 20px;
 }
@@ -239,5 +421,248 @@ footer {
 .navigate p {
     margin-right: 15px;
 }
+
+.hamburger-menu {
+    display: none;
+}
+
+@media only screen and (max-width: 391px) {
+
+/* Menu and footer */
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    #desktop-nav {
+        display: none;
+    }
+
+    .off-screen-menu {
+        background-color:  rgb(34, 37, 49);
+        height: 100vh;
+        width: 100%;
+        max-width: 390px;
+        position: fixed;
+        top: 0;
+        right: -450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        justify-content: center;
+        text-align: center;
+        font-size: 3rem;
+        transition: .3s ease;
+    }
+
+    .off-screen-menu.active {
+        right: 0;
+        z-index: 2;
+    }
+
+    .off-screen-menu ul {
+        list-style: none;
+    }
+
+    .off-screen-menu ul li {
+        margin-bottom: 40px;
+        text-decoration: none;
+    }
+
+    .off-screen-menu ul li a {
+        font-size: 30px;
+        text-decoration: none;
+    }
+
+    nav {
+        padding: 1rem;
+        display: flex;
+        background-color: transparent;
+    }
+
+    .ham-menu {
+        height: 50px;
+        width: 40px;
+        margin-left: auto;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .ham-menu span {
+        height: 5px;
+        width: 100%;
+        background-color: #e2ecfc;
+        border-radius: 25px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+        z-index: 2;
+    }
+
+    .ham-menu span:nth-child(1) {
+        top: 25%;
+    }
+
+    .ham-menu span:nth-child(3) {
+        top: 75%;
+    }
+
+    .ham-menu.active span {
+        background-color: white;
+    }
+
+    .ham-menu.active span:nth-child(1) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .ham-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .ham-menu.active span:nth-child(3) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    #logo img {
+        height: 65px;
+    }
+
+    .items {
+        flex-direction: column;
+    }
+
+    .socials {
+        margin-bottom: 60px;
+    }
+
+    .socials a img{
+        height: 30px;
+    }
+
+    .navigate {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .navigate p {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .copyright {
+        text-align: center;
+        font-size: 20px;
+    }
+    /* End of menu and footer, this can be pasted on any page */
+
+    .homeCoverContainer img {
+        width: 300px;
+        height: 300px;
+    }
+
+    #bodyheader {
+        font-size: 40px;
+    }
+
+    .homeCoverContainer h1 {
+        font-size: 22px;
+    }
+
+    #faqs {
+        flex-direction: column;
+    }
+
+    #faqs div {
+        margin: 20px;
+    }
+
+    #studentsfaq p, #employersfaq p {
+        font-size: 30px;
+        color: #3f79d6;
+    }
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    #bodytext {
+        font-size: 20px;
+        margin: 20px;
+    }
+
+    .outerInfo {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .outerInfo iframe {
+        width: 250px;
+        text-align: center;
+        align-items: center;
+        margin: 0 0 25px 0;
+    }
+
+    .info {
+        width: 250px;
+        text-align: center;
+    }   
+
+    .infoSocials {
+        width: 150px;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 1195px) and (min-width: 1190px) {
+    /* Header and footer */
+    #logo img {
+        height: 100px;
+    }
+
+    nav ul li {
+        padding: 0px 10px;
+    }
+
+    nav ul li a {
+        font-size: 23px;
+    }
+
+    #KimPhoto {
+        height: 450px;
+    }
+
+    .navigate {
+        margin-left: 10px;
+    }
+
+    /* Header and footer */
+
+    .homeCoverContainer img {
+        width: 900px;
+    }
+
+    .outerInfo iframe {
+        width: 80%;
+    }
+}
 </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamMenu = document.querySelector('.ham-menu');
+        const offScreenMenu = document.querySelector('.off-screen-menu');
+
+        hamMenu.addEventListener('click', function() {
+            hamMenu.classList.toggle('active');
+            offScreenMenu.classList.toggle('active');
+        });
+    });
+</script>
 </html>

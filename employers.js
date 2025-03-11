@@ -1,154 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employers</title>
-<link rel="stylesheet" href="employers.css">
+document.addEventListener('DOMContentLoaded', function() {
+    const hamMenu = document.querySelector('.ham-menu');
+    const offScreenMenu = document.querySelector('.off-screen-menu');
 
-</head>
-<script src="employers.js">
-</script>
-<body>
-    <header>
-        <a href="index.html" id="logo"><img src="images/guaranteed-logo.png" alt="guaranteed-logo"></a>
-        <div class="hamburger-menu">
-            <div class="off-screen-menu">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="jobs.html">JOBS</a></li>
-                    <li><a href="employers.html">EMPLOYERS</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                    <li><a href="login.html" id="loginButton">LOGIN</a></li>
-                </ul>
-            </div>
-            <nav>
-                <div class="ham-menu">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-            </nav>
-        </div>
-        <nav id="desktop-nav">
-            <ul>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="jobs.html">JOBS</a></li>
-                <li><a href="employers.html">EMPLOYERS</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="login.html" id="loginButton">LOGIN</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="general-info">
-        <div class="general-info-container">
-            <div class="information">
-                <p id="informationQuote"><i>Welcome, Employers! This is your hub for posting job opportunities and discovering motivated students from Passaic County Technical-Vocational Schools (PCTVS). Let us help you find the best talent for your business</i></p>
-                <div class="process">
-                    <h5>How It Works</h5>
-                    <p id="process-text">A simple breakdown of how employers can use the platform:</p>
-                    <ul>
-                        <li><strong>Post a Job:</strong> Submit job opportunities by filling out a form with the position's details.</li>
-                        <li><strong>Job Approval:</strong> Our team will review and approve your job posting, ensuring it meets our guidelines.</li>
-                        <li><strong>Connect with Students:</strong> Once approved, your job will be displayed on the student-facing job board, and you'll begin receiving applications from interested students.</li>
-                    </ul>
-                </div>
-                <div class="student-benefits">
-                    <h5>Benefits of working with PCTVS students!</h5>
-                    <ul>
-                        <li>Access to motivated and skilled students from a variety of vocational programs.</li>
-                        <li>Ability to provide real-world experience to students while benefiting from fresh perspectives and energy.</li>
-                        <li>Direct engagement with the next generation of professionals in tech, engineering, business, and more.</li>
-                    </ul>
-                </div>
-                <div class="student-images">
-                    <h2>Our Students hard at work!</h2>
-                    <img src="images/employers-image.png" alt="PCTVS Students at St. Josephs">
-                    <img src="images/employers-image-2.png" alt="PCTVS Students at work">
-                </div>
-            </div>
-            <div class="employer-form">
-                <form id="form1">
-                    <h3>SUBMIT A POSTING!</h3>
-                    <input type="text" id="cname" placeholder="Company Name"><br>
-                    <input type="text" id="cdescription" placeholder="Company Description" ><br>
-                    <input type="text" id="clocation" placeholder="Company Location" ><br>
-                    <span style="margin:10px;"><div class = "formlabel" style="margin:0px 10px 0px;">Choose Thumbnail</div><input type="file" id="pthumbnail" placeholder="Posting Thumbnail" accept="image/*" >    <div id="previewtext" style="color:black;display:none;">Preview:</div><br><div id="preview" style="color:black"></div>
-                    </span><br>
+    hamMenu.addEventListener('click', function() {
+        hamMenu.classList.toggle('active');
+        offScreenMenu.classList.toggle('active');
+    });
+});
 
-                    <!--
-                    <div class="btn-box">
-                        <button id="Next1" type="button">Next</button>
-                    </div>
-                    -->
-
-                <div style="height:8vh;"></div>
-                    <h3>JOB DESCRIPTION</h3>
-                    <input type="text" id="jtitle" placeholder="Job Title" ><br>
-                    <input type="text" id="jlocation" placeholder="Job Location" ><br>
-                    <input type="text" id="jdescription" placeholder="Job Description" ><br>
-                    <div class = "formlabel">Choose Job Type</div>
-                    <select id="jtype" name="Job Type">
-                        <option value="internship">Internship</option>
-                        <option value="contract">Contract</option>
-                        <option value="part-time">Part-time</option>
-                    </select>
-
-                    <div class = "formlabel">Choose CTE Tag</div>
-                    <select id = "ctetag" >
-                        <option value="video production">Video Production</option>
-                        <option value="business">Business</option>
-                        <option value="computer science">Computer Science</option>
-                        <option value="culinary">Culinary</option>
-                        <option value="finance">Finance</option>
-                        <option value="medical">Medical</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <input type="number" id="jpay" placeholder="Job Pay (Hourly)" ><br>
-
-                    <!--
-                    <div class="btn-box">
-                        <button id="Back1" type="button">Back</button>
-                        <button id="Next2" type="button">Next</button>
-                    </div>
-                -->
-
-                <div style="height:8vh;"></div>
-
-                    <h3>Contact</h3>
-                    <input type="email" id="jemail" placeholder="Company Email" ><br>
-                    <input type="tel" id="jphone" placeholder="Company Phone" ><br>
-                    <input type="tel" id="jfax" placeholder="Company Fax"><br>
-
-                    <div class="btn-box">
-                        <button id="submit" type="submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="items">
-            <div class="socials">
-                <a href = "https://www.instagram.com/pctvs1/"><img src="images/instaIcon.png" alt="Instagram Icon"></a>
-                <a href="https://www.youtube.com/@passaiccountytechnical-voc6240"><img src="images/youtubeIcon.png" alt="Youtube Icon"></a>
-                <a href="https://www.linkedin.com/school/pctvs/"><img src="images/linkedinIcon.png" alt="LinkedIn Icon"></a>
-            </div>
-            <div class="navigate">
-                <p><a href="about.html">About Us</a></p>
-                <p><a href="privacypolicy.html">Privacy Policy & Terms of Service</a></p>
-                <p><a href="contact.html">Contact</a></p>
-            </div>
-            <div class="copyright">
-                <p>@ 2025 GUARANTEED.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-
-<script>
-    // Event handler which waits for form submission to create a new job posting to be approved 
+// Event handler which waits for form submission to create a new job posting to be approved 
     var imageholder
     document.getElementById('form1').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -380,8 +240,3 @@
     }
     
 });
-
-</script>
-
-
-</html>

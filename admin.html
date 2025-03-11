@@ -43,12 +43,12 @@
     <div id="no-postings-message"></div> <!-- Message for when there are no postings -->
 
     <!-- Button to navigate to posted jobs page -->
-    <button id="view-all-button" onclick="location.href = 'index.html'">View All Job Postings</button>
+    <button id="view-all-button" onclick="location.href = 'jobs.html'">View All Job Postings</button>
 </div>
 
 <!-- Modal for editing job posting -->
 <div id="edit-modal" class="adminmodal">
-    <div class="admin-modal-content">
+    <div id = "admincontent" class="admin-modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <h2>Edit Job Posting</h2>
         <form id="edit-job-form">
@@ -57,7 +57,16 @@
             <input type="text" id="job-location" class="form-input" placeholder="Location" required />
             <input type="text" id="job-pay" class="form-input" placeholder="Pay" required />
             <input type="text" id="description" class="form-input" placeholder="Description" required />
-            <input type="file" id="pthumbnail" placeholder="Posting Thumbnail" accept="image/*" required>    <div id="previewtext" style="color:black;">Preview:</div><br><div id="preview" style="color:black"></div>
+            <select id = "cte-tag" class = "form-input">
+                <option value="none">All CTEs</option>
+                <option value="video production">Video Production</option>
+                <option value="business">Business</option>
+                <option value="computer science">Computer Science</option>
+                <option value="culinary">Culinary</option>
+                <option value="finance">Finance</option>
+                <option value="medical">Medical</option>
+            </select>
+            <input type="file" class = "form-input" id="pthumbnail" placeholder="Posting Thumbnail" accept="image/*">    <div id="previewtext" style="color:black;">Preview:</div><br><div id="preview" style="color:black"></div>
             <select id="employment-type" class="form-input">
                 <option value="full-time">Full-Time</option>
                 <option value="part-time">Part-Time</option>
@@ -82,6 +91,7 @@
 renderPostings();
 
 var imageholder
+var changed
 
 document.getElementById("pthumbnail").addEventListener("change", function(event) {
     const file = event.target.files[0];
@@ -97,7 +107,7 @@ document.getElementById("pthumbnail").addEventListener("change", function(event)
             imageholder = e.target.result;
             previewDiv.innerHTML = "";  // Clear previous preview
             previewDiv.appendChild(img);  // Show the image preview
-
+            changed = true
         };
 
         reader.readAsDataURL(file);  // Convert the image to a data URL
@@ -109,4 +119,5 @@ document.getElementById("pthumbnail").addEventListener("change", function(event)
 
 
 </body>
+
 </html>

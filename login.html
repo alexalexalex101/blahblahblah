@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
     <header>
         <a href="index.html" id="logo"><img src="images/guaranteed-logo.png" alt="guaranteed-logo"></a>
-        <nav>
+        <div class="hamburger-menu">
+            <div class="off-screen-menu">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="jobs.html">JOBS</a></li>
+                    <li><a href="employers.html">EMPLOYERS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="login.html" id="loginButton">LOGIN</a></li>
+                </ul>
+            </div>
+            <nav>
+                <div class="ham-menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+            </nav>
+        </div>
+        <nav id="desktop-nav">
             <ul>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="jobs.html">JOBS</a></li>
@@ -20,20 +40,18 @@
     </header>
     <section class="login-sec">
         <div class="login-container">
-            <h2>WELCOME!</h2>
-            <div class="login-form">
-                <form>
-                    <input type="text" id="username" placeholder="Username" required>
-                    <input type="password" id="password" placeholder="Password" required>
-
-                    <div class="btn-box">
-                        <button type="button" id="submit-btn">Enter</button> 
-                        <a href="#">Sign Up</a>
-                    </div>
-                </form>
-            </div>
+            <form id="form1">
+                <h2>WELCOME!</h2>
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <p id="incorrectLabel">Incorrect username or password.</p>
+                <div class="btn-box">
+                    <button type="submit" id="submit-btn">Enter</button> 
+                </div>
+            </form>
         </div>
     </section>
+    <div style = "flex-grow:1;"></div>
     <footer>
         <div class="items">
             <div class="socials">
@@ -99,7 +117,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 30px 8%;
     border-bottom: #9cb1db;
     border: 1px;
     margin-bottom:10px;
@@ -107,8 +125,27 @@ header {
 }
 
 body {
-    background-color: #030d1b;
-    
+    position: relative;
+    background-color: rgba(3, 13, 27, 0.5); 
+    background-blend-mode: overlay; 
+    background-size: cover; 
+    background-position: center center; 
+    background-attachment: fixed;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images\\pctvs-2.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    filter: blur(4px);
+    z-index: -1;
 }
 
 #logo {
@@ -132,8 +169,9 @@ nav ul li {
 
 nav ul li a {
     transition: 0.5s;
-    font-size: 20px;
+    font-size: 25px;
 }
+
 
 #loginButton {
     text-align: center;
@@ -190,11 +228,14 @@ nav ul li a {
     }
 
     .login-container {
-        padding: 5% 10%;
+        padding: 5vh 10vw;
         background-color: #e2ecfc;
         border-radius: 20px;
         width: 400px;
+        display: flex;
         text-align: center;
+        align-items: center;
+        justify-content: center;
     }
 
     .login-container h2 {
@@ -202,13 +243,18 @@ nav ul li a {
         text-align: center;
         font-size: 35px;
         margin-bottom: 25px;
+        text-align: center;
     }
 
     .btn-box a {
         color: #030d1b;
     }
 
-    .login-form form input {
+    .login-container form {
+        text-align: center;
+    }
+    
+    .login-container form input {
         margin: 10px;
         width: 100%;
         padding: 10px 5px;
@@ -219,50 +265,249 @@ nav ul li a {
         color: #030d1b;
     }
 
-    .login-form form input::placeholder {
+    .login-container form input::placeholder {
         color: #3f79d6;
     }
 
     .btn-box {
         width: 100%;
-        margin: 30px auto;
+        padding: 20px 20px;
         text-align: center;
     }
 
-.btn-box button {
-    width: 110px;
-    height: 35px;
-    margin: 0 10px;
-    background-color: #3f79d6;
-    border-radius: 20px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    transition: 0.5s;
-    margin-bottom: 30px;
-}
+    .btn-box button {
+        width: 110px;
+        height: 35px;
+        margin: 0 10px;
+        background-color: #3f79d6;
+        border-radius: 20px;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        transition: 0.5s;
+        margin-bottom: 30px;
+    }
 
-.btn-box button:hover {
-    background-color: #e2ecfc;
-    border: 1px solid #25467a;
-    color: #3f79d6;
-}
-</style>
-<script>
-    var button1 = document.getElementById("submit-btn");
-    let usernameInputField = document.getElementById("username");
-    let passwordInputField = document.getElementById("password");
+    html {
+        margin:0;
+        min-height:100vh;
+    }
 
-    var username = usernameInputField.value;
-    var password = passwordInputField.value;
+    body {
+        margin:0;
+        min-height:100vh;
+        display: flex;
+        flex-direction:column;
+    }
 
-    let adminUsername = "admin";
-    let adminPassword = "passaic";
+    @keyframes shake {
+        0% {
+            transform: translateX(-10px);
+        }
 
-    button1.onclick = function() {
-        if((adminUsername == username) && (adminPassword == password)) {
-            console.log("Good Boy!");
+        25% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(10px);
+        }
+
+        75% {
+            transform: translateX(5px);
+        }
+
+        100% {
+            transform: translateX(0);
         }
     }
+
+
+    .login-container p{
+        color: #990F02;
+        font-size: 15px;
+        margin: 10px;
+        display: none;
+    }
+
+
+    .btn-box button:hover {
+        background-color: #e2ecfc;
+        border: 1px solid #25467a;
+        color: #3f79d6;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+@media only screen and (max-width: 391px) {
+
+    /* Menu and footer */
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    #desktop-nav {
+        display: none;
+    }
+
+    .off-screen-menu {
+        background-color:  rgb(34, 37, 49);
+        height: 100vh;
+        width: 100%;
+        max-width: 390px;
+        position: fixed;
+        top: 0;
+        right: -450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        justify-content: center;
+        text-align: center;
+        font-size: 3rem;
+        transition: .3s ease;
+    }
+
+    .off-screen-menu.active {
+        right: 0;
+    }
+
+    .off-screen-menu ul {
+        list-style: none;
+    }
+
+    .off-screen-menu ul li {
+        margin-bottom: 40px;
+        text-decoration: none;
+    }
+
+    .off-screen-menu ul li a {
+        font-size: 30px;
+        text-decoration: none;
+    }
+
+    nav {
+        padding: 1rem;
+        display: flex;
+        background-color: transparent;
+    }
+
+    .ham-menu {
+        height: 50px;
+        width: 40px;
+        margin-left: auto;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .ham-menu span {
+        height: 5px;
+        width: 100%;
+        background-color: #e2ecfc;
+        border-radius: 25px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+    }
+
+    .ham-menu span:nth-child(1) {
+        top: 25%;
+    }
+
+    .ham-menu span:nth-child(3) {
+        top: 75%;
+    }
+
+    .ham-menu.active span {
+        background-color: white;
+    }
+
+    .ham-menu.active span:nth-child(1) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .ham-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .ham-menu.active span:nth-child(3) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    #logo img {
+        height: 65px;
+    }
+
+    .items {
+        flex-direction: column;
+    }
+
+    .socials {
+        margin-bottom: 60px;
+    }
+
+    .socials a img{
+        height: 30px;
+    }
+
+    .navigate {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .navigate p {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .copyright {
+        text-align: center;
+        font-size: 20px;
+    }
+    /* End of menu and footer, this can be pasted on any page */
+
+    .login-sec {
+        margin: 40px 0 40px 0;
+    }
+}
+
+</style>
+<script>
+    document.getElementById("form1").addEventListener("submit", function(event){
+        event.preventDefault();
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var incorrectLabel = document.getElementById("incorrectLabel");
+        if(username == "admin" && password == "AdminPass"){
+            window.location.href = "admin.html";
+        } else{
+            incorrectLabel.style.display = "block"
+            labelShake();
+        }
+    });
+
+    function labelShake() {
+        var incorrectLabel = document.getElementById("incorrectLabel");
+        incorrectLabel.style.animation = "none";
+        incorrectLabel.offsetHeight;
+        incorrectLabel.style.animation = "shake 0.25s 2";
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamMenu = document.querySelector('.ham-menu');
+        const offScreenMenu = document.querySelector('.off-screen-menu');
+
+        hamMenu.addEventListener('click', function() {
+            hamMenu.classList.toggle('active');
+            offScreenMenu.classList.toggle('active');
+        });
+    });
 </script>
 </html>
